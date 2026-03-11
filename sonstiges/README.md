@@ -125,7 +125,7 @@ python -m src.main --autostart-status
 | Audio | .mp3, .wav, .flac, .aac, .ogg, .m4a |
 | Archiv | .zip, .rar, .7z, .tar, .gz, .bz2 |
 | Code | .py, .js, .html, .css, .java, .cpp, .c, .go, .rs |
-| Ausführbare | .exe, .msi, .dmg, .pkg, .deb, .rpm |
+| Programme | .exe, .msi, .dmg, .pkg, .deb, .rpm |
 | E-Books | .epub, .mobi, .azw, .azw3 |
 | Sonstige | Alle anderen Dateien |
 
