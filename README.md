@@ -140,22 +140,26 @@ python -m src.main --autostart-status
 
 ```
 file-organizer/
-├── src/                # Der eigentliche Quellcode
-│   ├── __init__.py     # Macht den Ordner zum Python-Paket
-│   ├── main.py         # Startpunkt des Programms
-│   ├── handler.py      # Logik für das Verschieben der Dateien
-│   ├── config.py       # Definition der Dateitypen und Pfade
-│   ├── watcher.py      # Dateisystemüberwachung mit watchdog
-│   ├── service.py      # Windows-Dienst-Integration
-│   ├── tray.py         # System Tray GUI
-│   └── autostart.py    # Autostart-Funktionalität
-├── logs/               # Speicherort für Aktivitäts-Logs
-├── tests/            [⭐ Star auf GitHub](https://github.com/Mauxstn/file-organizer) | 
-[🐛 Bug melden](https://github.com/Mauxstn/file-organizer/issues) | 
-[💡 Feature vorschlagen](https://github.com/Mauxstn/file-organizer/issues)
-├── .gitignore          # Schließt venv/ und __pycache__ aus
-├── requirements.txt    # Liste der Abhängigkeiten
-└── README.md           # Dokumentation
+├── .gitignore
+├── README.md
+├── requirements.txt
+├── dokumente/
+│   └── requirements.txt
+├── logs/
+├── sonstiges/
+│   └── README.md
+├── src/
+│   ├── __init__.py
+│   ├── __pycache__/
+│   ├── autostart.py
+│   ├── config.py
+│   ├── handler.py
+│   ├── main-minimal.py
+│   ├── main.py
+│   ├── service.py
+│   ├── tray.py
+│   └── watcher.py
+└── tests/
 ```
 
 ## Entwicklung
