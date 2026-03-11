@@ -18,7 +18,7 @@ Der File Organizer überwacht ein Verzeichnis und verschiebt Dateien automatisch
 
 1. Repository klonen:
 ```bash
-git clone <repository-url>
+git clone <https://github.com/Mauxstn/file-organizer>
 cd file-organizer
 ```
 
