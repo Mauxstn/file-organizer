@@ -33,7 +33,8 @@ class Config:
             "Archiv": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"],
             "Code": [".py", ".js", ".html", ".css", ".java", ".cpp", ".c", ".go", ".rs"],
             "Ausführbare": [".exe", ".msi", ".dmg", ".pkg", ".deb", ".rpm"],
-            "E-Books": [".epub", ".mobi", ".azw", ".azw3"]
+            "E-Books": [".epub", ".mobi", ".azw", ".azw3"],
+            "3D-Modelle": [".blend", ".obj", ".fbx", ".dae", ".3ds", ".stl", ".ply", ".x3d"]
         }
     
     def _get_default_directories(self) -> Dict[str, str]:

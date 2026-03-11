@@ -133,6 +133,7 @@ python -m src.main --autostart-status
 | Code | .py, .js, .html, .css, .java, .cpp, .c, .go, .rs |
 | Ausführbare | .exe, .msi, .dmg, .pkg, .deb, .rpm |
 | E-Books | .epub, .mobi, .azw, .azw3 |
+| 3D-Modelle | .blend, .obj, .fbx, .dae, .3ds, .stl, .ply, .x3d |
 | Sonstige | Alle anderen Dateien |
 
 ## Projektstruktur

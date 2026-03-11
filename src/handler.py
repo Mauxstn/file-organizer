@@ -65,6 +65,12 @@ class FileHandler:
                 self.logger.debug(f"Überspringe versteckte Datei: {file_path}")
                 return
             
+            # Projektdateien überspringen
+            project_files = {'README.md', 'requirements.txt', 'setup.py', '.gitignore'}
+            if file_path.name in project_files:
+                self.logger.debug(f"Überspringe Projektdatei: {file_path}")
+                return
+            
             # Zielordner ermitteln
             folder_name = self.config.get_folder_for_file(file_path)
             target_path = self.config.get_target_path(file_path, base_dir)

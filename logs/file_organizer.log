@@ -8,3 +8,11 @@
 2026-03-11 21:51:34,486 - src.handler - INFO - organizing_directory
 2026-03-11 21:51:34,493 - src.handler - INFO - Organization completed
 2026-03-11 22:03:45,154 - src.watcher - ERROR - Fehler in der Überwachung: Verzeichnis existiert nicht: ~\Downloads
+2026-03-11 22:18:57,311 - __main__ - INFO - File Organizer wird gestartet
+2026-03-11 22:18:57,313 - __main__ - INFO - Überwache Verzeichnis: C:\Users\Maurice\Coding\file-organizer
+2026-03-11 22:18:57,314 - __main__ - INFO - DRY-RUN Modus: Keine Dateien werden tatsächlich verschoben
+2026-03-11 22:18:57,317 - src.watcher - INFO - Überwachung gestartet für: C:\Users\Maurice\Coding\file-organizer
+2026-03-11 22:18:57,317 - src.watcher - INFO - Organisiere vorhandene Dateien...
+2026-03-11 22:18:57,318 - src.handler - INFO - Starte Organisation von: C:\Users\Maurice\Coding\file-organizer
+2026-03-11 22:18:57,319 - src.handler - INFO - [DRY-RUN] Würde verschieben: C:\Users\Maurice\Coding\file-organizer\README.md -> C:\Users\Maurice\Coding\file-organizer\sonstiges\README_1.md
+2026-03-11 22:18:57,320 - src.handler - INFO - Organisation abgeschlossen
