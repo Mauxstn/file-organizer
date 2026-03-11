@@ -16,19 +16,25 @@ Der File Organizer überwacht ein Verzeichnis und verschiebt Dateien automatisch
 
 ## Installation
 
-1. Repository klonen:
+### 1. Repository klonen
+
 ```bash
-git clone <https://github.com/Mauxstn/file-organizer>
+git clone https://github.com/Mauxstn/file-organizer.git
 cd file-organizer
 ```
 
-2. Virtuelle Umgebung erstellen und aktivieren:
+### 2. Virtuelle Umgebung erstellen
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+# Windows:
+venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
 ```
 
-3. Abhängigkeiten installieren:
+### 3. Abhängigkeiten installieren
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -143,7 +149,9 @@ file-organizer/
 │   ├── tray.py         # System Tray GUI
 │   └── autostart.py    # Autostart-Funktionalität
 ├── logs/               # Speicherort für Aktivitäts-Logs
-├── tests/              # Unit-Tests für die Verschiebe-Logik
+├── tests/            [⭐ Star auf GitHub](https://github.com/Mauxstn/file-organizer) | 
+[🐛 Bug melden](https://github.com/Mauxstn/file-organizer/issues) | 
+[💡 Feature vorschlagen](https://github.com/Mauxstn/file-organizer/issues)
 ├── .gitignore          # Schließt venv/ und __pycache__ aus
 ├── requirements.txt    # Liste der Abhängigkeiten
 └── README.md           # Dokumentation
@@ -160,7 +168,6 @@ python -m pytest tests/
 ### Code-Style
 
 Das Projekt folgt den PEP 8 Richtlinien. Zur Überprüfung kann `flake8` verwendet werden:
-
 ```bash
 flake8 src/
 ```
@@ -188,6 +195,3 @@ config.remove_file_type("Ausführbare")
 
 MIT License
 
-## Beitrag
-
-Beiträge sind willkommen! Bitte erstellen Sie einen Pull Request oder öffnen Sie ein Issue für Bugs oder Feature-Anfragen.
