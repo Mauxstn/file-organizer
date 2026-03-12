@@ -140,14 +140,11 @@ python -m src.main --autostart-status
 
 ```
 file-organizer/
-├── .gitignore
 ├── README.md
 ├── requirements.txt
 ├── dokumente/
 │   └── requirements.txt
 ├── logs/
-├── sonstiges/
-│   └── README.md
 ├── src/
 │   ├── __init__.py
 │   ├── __pycache__/
@@ -218,12 +215,22 @@ Ein intelligentes Python-Tool, das deine Dateien automatisch nach Typen sortiert
 
 ## Schnellstart in 60 Sekunden
 
-### 1. Klonen & Installieren
+### 1. Herunterladen & Installieren
+
+**Option A: Mit Git**
 ```bash
+# Falls Git nicht installiert: https://git-scm.com/download/win
 git clone https://github.com/Mauxstn/file-organizer.git
 cd file-organizer
 pip install watchdog
 ```
+
+**Option B: Ohne Git**
+1. Gehe zu: https://github.com/Mauxstn/file-organizer
+2. Klicke auf "Code" → "Download ZIP"
+3. Entpacke die ZIP-Datei
+4. Öffne die Kommandozeile im Ordner
+5. Führe aus: `pip install watchdog`
 
 ### 2. Testen (100% sicher!)
 ```bash
@@ -290,37 +297,6 @@ python -m src.main --tray
 - **Test-Modus** - `--dry-run` zeigt exakt was passieren würde
 - **Konfliktschutz** - Bei doppelten Dateinamen wird automatisch nummeriert
 - **Vollständiges Logging** - Jede Aktion wird protokolliert
-
-## Projektarchitektur
-
-```
-file-organizer/
-├── src/                    # Quellcode
-│   ├── main.py            # Hauptprogramm & CLI
-│   ├── config.py          # Dateityp-Konfiguration  
-│   ├── handler.py         # Dateiverschiebe-Logik
-│   ├── watcher.py         # Echtzeitüberwachung
-│   ├── service.py         # Windows-Dienst
-│   ├── tray.py            # System Tray GUI
-│   ├── autostart.py       # Autostart-Manager
-│   └── main-minimal.py    # Minimale Version
-├── logs/                  # Aktivitäts-Logs
-├── tests/                 # Unit-Tests
-├── .gitignore             # Git-Ignore
-├── requirements.txt       # Requirements
-└── README.md              # Dokumentation
-```
-
-## Anpassung & Erweiterung
-
-Du kannst die Dateityp-Zuordnungen einfach anpassen:
-
-```python
-# In src/config.py
-config.add_file_type("3D-Modelle", [".obj", ".fbx", ".blend"])
-config.add_file_type("Design", [".psd", ".ai", ".fig"])
-config.remove_file_type("Programme")  # Kategorie entfernen
-```
 
 ## Fortgeschrittene Features
 
