@@ -203,14 +203,14 @@ MIT License
 
 **Automatische Dateiorganisation für Windows, Linux und macOS**
 
-Ein intelligentes Python-Tool, das deine Dateien automatisch nach Typen sortiert - perfekt für chaotische Download-Ordner! Stoppe manuelle Dateiverwaltung und lass die KI für dich arbeiten.
+Ein intelligentes Python-Tool, das deine Dateien automatisch nach Typen sortiert - perfekt für chaotische Download-Ordner! Stoppe manuelle Dateiverwaltung und automatisiere deine Organisation.
 
 ## Warum File Organizer?
 
 - **Echtzeitüberwachung** - Dateien werden sofort organisiert, sobald sie erscheinen
-- **Smarte KI-Erkennung** - 11+ Dateityp-Kategorien mit präziser Sortierung
-- **100% Sicher** - Nur Verschieben, kein Löschen, mit Test-Modus
-- **Einfach Setup** - Nur 1 Abhängigkeit, keine komplizierte Konfiguration
+- **Smarte Erkennung** - 11+ Dateityp-Kategorien mit präziser Sortierung
+- **100% Sicher** - Nur Verschieben, kein Löschen
+- **Einfaches Setup** - Keine komplizierte Konfiguration
 - **Kontinuierlich** - Läuft im Hintergrund, ohne Terminal-Fenster
 
 ## Schnellstart in 60 Sekunden
