@@ -32,9 +32,10 @@ class Config:
             "Audio": [".mp3", ".wav", ".flac", ".aac", ".ogg", ".m4a"],
             "Archiv": [".zip", ".rar", ".7z", ".tar", ".gz", ".bz2"],
             "Code": [".py", ".js", ".html", ".css", ".java", ".cpp", ".c", ".go", ".rs"],
-            "Ausführbare": [".exe", ".msi", ".dmg", ".pkg", ".deb", ".rpm"],
+            "Programme": [".exe", ".msi", ".dmg", ".pkg", ".deb", ".rpm"],
             "E-Books": [".epub", ".mobi", ".azw", ".azw3"],
-            "3D-Modelle": [".blend", ".obj", ".fbx", ".dae", ".3ds", ".stl", ".ply", ".x3d"]
+            "3D-Modelle": [".blend", ".obj", ".fbx", ".dae", ".3ds", ".stl", ".ply", ".x3d"],
+            "Design": [".psd", ".ai", ".fig", ".sketch", ".xd", ".svg", ".eps"]
         }
     
     def _get_default_directories(self) -> Dict[str, str]:

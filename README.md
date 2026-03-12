@@ -261,6 +261,7 @@ python -m src.main --daemon --watch-dir ~/Downloads
 | **E-Books** | epub, mobi, azw, azw3 | `e-books/` |
 | **Präsentationen** | ppt, pptx, odp, key | `praesentationen/` |
 | **3D-Modelle** | blend, obj, fbx, dae, 3ds, stl, ply, x3d | `3d-modelle/` |
+| **Design** | psd, ai, fig, sketch, xd, svg, eps | `design/` |
 | **Sonstiges** | Alle anderen Dateien | `sonstiges/` |
 
 ## Nützliche Befehle
