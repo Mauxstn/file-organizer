@@ -140,26 +140,21 @@ python -m src.main --autostart-status
 
 ```
 file-organizer/
-├── .gitignore
-├── README.md
-├── requirements.txt
-├── dokumente/
-│   └── requirements.txt
-├── logs/
-├── sonstiges/
-│   └── README.md
-├── src/
-│   ├── __init__.py
-│   ├── __pycache__/
-│   ├── autostart.py
-│   ├── config.py
-│   ├── handler.py
-│   ├── main-minimal.py
-│   ├── main.py
-│   ├── service.py
-│   ├── tray.py
-│   └── watcher.py
-└── tests/
+├── src/                # Der eigentliche Quellcode
+│   ├── __init__.py     # Macht den Ordner zum Python-Paket
+│   ├── main.py         # Startpunkt des Programms
+│   ├── handler.py      # Logik für das Verschieben der Dateien
+│   ├── config.py       # Definition der Dateitypen und Pfade
+│   ├── watcher.py      # Dateisystemüberwachung mit watchdog
+│   ├── service.py      # Windows-Dienst-Integration
+│   ├── tray.py         # System Tray GUI
+│   ├── autostart.py    # Autostart-Funktionalität
+│   └── main-minimal.py # Minimale Version
+├── logs/               # Speicherort für Aktivitäts-Logs
+├── tests/              # Unit-Tests für die Verschiebe-Logik
+├── .gitignore          # Schließt venv/ und __pycache__ aus
+├── requirements.txt    # Liste der Abhängigkeiten
+└── README.md           # Dokumentation
 ```
 
 ## Entwicklung
@@ -200,3 +195,166 @@ config.remove_file_type("Ausführbare")
 
 MIT License
 
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)]()
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)]()
+
+**Automatische Dateiorganisation für Windows, Linux und macOS**
+
+Ein intelligentes Python-Tool, das deine Dateien automatisch nach Typen sortiert - perfekt für chaotische Download-Ordner! Stoppe manuelle Dateiverwaltung und lass die KI für dich arbeiten.
+
+## Warum File Organizer?
+
+- **Echtzeitüberwachung** - Dateien werden sofort organisiert, sobald sie erscheinen
+- **Smarte KI-Erkennung** - 11+ Dateityp-Kategorien mit präziser Sortierung
+- **100% Sicher** - Nur Verschieben, kein Löschen, mit Test-Modus
+- **Einfach Setup** - Nur 1 Abhängigkeit, keine komplizierte Konfiguration
+- **Kontinuierlich** - Läuft im Hintergrund, ohne Terminal-Fenster
+
+## Schnellstart in 60 Sekunden
+
+### 1. Klonen & Installieren
+```bash
+git clone https://github.com/Mauxstn/file-organizer.git
+cd file-organizer
+pip install watchdog
+```
+
+### 2. Testen (100% sicher!)
+```bash
+python -m src.main --dry-run
+```
+
+### 3. Loslegen!
+```bash
+# Windows
+python -m src.main --daemon --watch-dir "C:\Users\%USERNAME%\Downloads"
+
+# Linux/macOS  
+python -m src.main --daemon --watch-dir ~/Downloads
+```
+
+## Beispiel Output
+
+```
+2026-03-11 22:18:57 - INFO - File Organizer wird gestartet
+2026-03-11 22:18:57 - INFO - Überwache Verzeichnis: C:\Users\Maurice\Downloads
+2026-03-11 22:19:02 - INFO - Verschoben: screenshot.png -> Bilder/screenshot.png
+2026-03-11 22:19:05 - INFO - Verschoben: dokument.pdf -> Dokumente/dokument.pdf
+2026-03-11 22:19:08 - INFO - Verschoben: video.mp4 -> Videos/video.mp4
+```
+
+## Was wird wohin verschoben?
+
+| Kategorie | Dateiendungen | Zielordner |
+|-----------|---------------|------------|
+| **Bilder** | jpg, png, gif, svg, webp, bmp, tiff | `bilder/` |
+| **Dokumente** | pdf, doc, docx, txt, rtf, odt | `dokumente/` |
+| **Tabellen** | xls, xlsx, csv, ods, numbers | `tabellen/` |
+| **Videos** | mp4, avi, mkv, mov, wmv, flv | `videos/` |
+| **Audio** | mp3, wav, flac, aac, ogg, m4a | `audio/` |
+| **Archiv** | zip, rar, 7z, tar, gz, bz2 | `archiv/` |
+| **Code** | py, js, html, css, java, cpp, go | `code/` |
+| **Programme** | exe, msi, dmg, pkg, deb, rpm | `programme/` |
+| **E-Books** | epub, mobi, azw, azw3 | `e-books/` |
+| **Präsentationen** | ppt, pptx, odp, key | `praesentationen/` |
+| **3D-Modelle** | blend, obj, fbx, dae, 3ds, stl, ply, x3d | `3d-modelle/` |
+| **Sonstiges** | Alle anderen Dateien | `sonstiges/` |
+
+## Nützliche Befehle
+
+```bash
+# Nur einmal organisieren (keine Überwachung)
+python -m src.main --once
+
+# Ausführliche Logs für Debugging
+python -m src.main --log-level DEBUG
+
+# Bestimmtes Verzeichnis überwachen
+python -m src.main --watch-dir "C:\Pfad\zum\Ordner"
+
+# System Tray GUI (für visuelle Kontrolle)
+python -m src.main --tray
+```
+
+## Sicherheitsgarantie
+
+- **Keine Datenverlust** - Dateien werden nur verschoben, niemals gelöscht
+- **Keine Systemänderungen** - Berührt keine Systemdateien oder Registry
+- **Test-Modus** - `--dry-run` zeigt exakt was passieren würde
+- **Konfliktschutz** - Bei doppelten Dateinamen wird automatisch nummeriert
+- **Vollständiges Logging** - Jede Aktion wird protokolliert
+
+## Projektarchitektur
+
+```
+file-organizer/
+├── src/                    # Quellcode
+│   ├── main.py            # Hauptprogramm & CLI
+│   ├── config.py          # Dateityp-Konfiguration  
+│   ├── handler.py         # Dateiverschiebe-Logik
+│   ├── watcher.py         # Echtzeitüberwachung
+│   ├── service.py         # Windows-Dienst
+│   ├── tray.py            # System Tray GUI
+│   ├── autostart.py       # Autostart-Manager
+│   └── main-minimal.py    # Minimale Version
+├── logs/                   # Aktivitäts-Logs
+├── tests/                  # Unit-Tests
+├── .gitignore              # Git-Ignore
+├── requirements.txt         # Abhängigkeiten
+└── README.md              # Dokumentation
+```
+
+## Anpassung & Erweiterung
+
+Du kannst die Dateityp-Zuordnungen einfach anpassen:
+
+```python
+# In src/config.py
+config.add_file_type("3D-Modelle", [".obj", ".fbx", ".blend"])
+config.add_file_type("Design", [".psd", ".ai", ".fig"])
+config.remove_file_type("Programme")  # Kategorie entfernen
+```
+
+## Fortgeschrittene Features
+
+### Windows-Dienst Integration
+```bash
+# Als Windows-Dienst installieren
+python -m src.main --install-service
+python -m src.main --start-service
+```
+
+### Autostart beim Systemstart
+```bash
+# Automatisch mit Windows starten
+python -m src.main --enable-autostart
+```
+
+### System Tray GUI
+```bash
+# Visuelle Kontrolle via System Tray
+python -m src.main --tray
+```
+
+## Mitmachen & Beiträge
+
+Du hast eine Idee für ein Feature oder gefunden einen Bug? Super!
+
+- [Bug melden](https://github.com/Mauxstn/file-organizer/issues)
+- [Feature vorschlagen](https://github.com/Mauxstn/file-organizer/issues)  
+- [Pull Request einreichen](https://github.com/Mauxstn/file-organizer/pulls)
+- [GitHub Star geben](https://github.com/Mauxstn/file-organizer) - wenn es dir hilft!
+
+## Lizenz
+
+MIT License - Kostenlos für private und kommerzielle Nutzung
+
+---
+
+**Fertig! Dein Download-Ordner wird nie wieder chaotisch sein!**
+
+[Star auf GitHub](https://github.com/Mauxstn/file-organizer) | 
+[Bug melden](https://github.com/Mauxstn/file-organizer/issues) | 
+[Feature vorschlagen](https://github.com/Mauxstn/file-organizer/issues)
