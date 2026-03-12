@@ -173,13 +173,6 @@ file-organizer/
 python -m pytest tests/
 ```
 
-### Code-Style
-
-Das Projekt folgt den PEP 8 Richtlinien. Zur Überprüfung kann `flake8` verwendet werden:
-```bash
-flake8 src/
-```
-
 ## Konfiguration anpassen
 
 Die Dateitypzuordnungen können in der `src/config.py` angepasst werden:
