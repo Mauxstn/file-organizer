@@ -307,10 +307,10 @@ file-organizer/
 │   ├── tray.py            # System Tray GUI
 │   ├── autostart.py       # Autostart-Manager
 │   └── main-minimal.py    # Minimale Version
-├── logs/                   # Aktivitäts-Logs
-├── tests/                  # Unit-Tests
-├── .gitignore              # Git-Ignore
-├── requirements.txt         # Abhängigkeiten
+├── logs/                  # Aktivitäts-Logs
+├── tests/                 # Unit-Tests
+├── .gitignore             # Git-Ignore
+├── requirements.txt       # Requirements
 └── README.md              # Dokumentation
 ```
 
