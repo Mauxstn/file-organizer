@@ -178,11 +178,14 @@ python -m pytest tests/
 Die Dateitypzuordnungen können in der `src/config.py` angepasst werden:
 
 ```python
-# Neuen Dateityp hinzufügen
-config.add_file_type("3D-Modelle", [".obj", ".fbx", ".blend"])
+# Beispiel 1: Neue Kategorie für Videoproduktion hinzufügen
+config.add_file_type("Video-Projekte", [".prproj", ".drp", ".veg"])
 
-# Dateityp entfernen
-config.remove_file_type("Ausführbare")
+# Beispiel 2: Design-Dateien erweitern
+config.add_file_type("Design", [".psd", ".ai", ".fig", ".sketch", ".xd"])
+
+# Beispiel 3: Kategorie entfernen (wenn nicht benötigt)
+config.remove_file_type("Programme")
 ```
 
 ## Sicherheit
